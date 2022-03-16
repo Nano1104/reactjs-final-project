@@ -1,4 +1,6 @@
 import React from "react";
+//importamos el Cart
+import Cart from './CartWidget'
 
 const NavBar=()=>{
     return (
@@ -33,6 +35,8 @@ const NavBar=()=>{
             </ul>
           </div>
         </div>
+
+        <Cart />
       </nav>
     )
 }
