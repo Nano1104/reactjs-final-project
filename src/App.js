@@ -1,37 +1,28 @@
+/* { Component } para los componentes de clase */
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+/* importamos los componentes */
 import NavBar from './components/NavBar';
-import ListItemContainer from './components/listItemContainer';
+import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
 
-
-
+const arrayProductos=["Anillos", "Aros", "Cadenas", "Pulseras"]
 
 function App() {
   return (
+    <div>
     <header>
       <NavBar />
-      <ListItemContainer />
+      <ItemListContainer
+        anillos={arrayProductos[0]}
+        aros={arrayProductos[1]}
+        cadenas={arrayProductos[2]}
+        pulseras={arrayProductos[3]}
+      />   
+      <ItemCount />
     </header>
-    
-    
-    /*<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>*/
+    </div>    
   );
 }
 
