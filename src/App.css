@@ -85,3 +85,14 @@
   transition: .2s all;
   color: green;
 }
+
+.cajaItem{
+  display: flex;
+}
+.item{
+  margin: 20px;
+}
+.imagenP{
+  width: 250px;
+  height: 250px;
+}

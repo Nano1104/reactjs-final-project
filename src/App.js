@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import './App.css';
 
 /* importamos los componentes */
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
-
-const arrayProductos=["Anillos", "Aros", "Cadenas", "Pulseras"]
+import NavBar from './components/organisms/NavBar';
+import ItemListContainer from './components/organisms/ItemListContainer';
+import ItemCount from './components/molecules/ItemCount';
 
 function App() {
   return (
@@ -15,10 +13,7 @@ function App() {
     <header>
       <NavBar />
       <ItemListContainer
-        anillos={arrayProductos[0]}
-        aros={arrayProductos[1]}
-        cadenas={arrayProductos[2]}
-        pulseras={arrayProductos[3]}
+        
       />   
       <ItemCount />
     </header>

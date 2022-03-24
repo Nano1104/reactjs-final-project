@@ -1,6 +1,6 @@
 import React from "react";
 //importamos el Cart
-import Cart from './CartWidget'
+import Cart from '../molecules/CartWidget'
 
 const NavBar=()=>{
     return (
