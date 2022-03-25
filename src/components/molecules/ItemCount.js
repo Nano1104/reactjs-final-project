@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 
-export default function ItemCount (){
-    const [cantidad, setCantidad]=useState(0);
+export default function ItemCount ({stock, initial, onAdd}){
+    const [cantidad, setCantidad]=useState(initial);
     const [texto, setTexto]=useState();
     const [textoLimite, setTextoLimite]=useState();
+
     /* aumentamos en 1 la cantidad y lanzamos el texto limite cuando no hay stock */
     const incrementar=()=>{
         setCantidad(cantidad +1);
-        if(cantidad == 15){
+        if(cantidad == 5){
             setCantidad(cantidad);
             setTextoLimite("Alcanzaste el limite de stock");
         }
+        setTexto();
     }
     /* disminuimos el valor de cantidad en 1 y ocultamos el texto del limite */
     const reducir=()=>{
@@ -18,16 +20,18 @@ export default function ItemCount (){
             setCantidad(cantidad - 1);
         }
         setTextoLimite();
+        setTexto();
     }
     /* lanza el texto cuando finaliza la compra y oculta los valores de cantidad */
     const finalizarCompra=()=>{
-        setCantidad(0);
+        onAdd(cantidad);
+        setCantidad(initial);
         setTexto("Has finalizado tu compra");
         setTextoLimite();
     }
     
     return <div class="countBox">
-            <h2>Stock Disponible: 15</h2>
+            <h2>Stock Disponible: {stock}</h2>
             <p>{cantidad}</p>
             <p style={{fontSize: "20px"}}>{textoLimite}</p>
             <div>

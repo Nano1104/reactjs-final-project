@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import anillo1 from '../../images/anillo1.jpg';
 import anillo2 from '../../images/anillo2.jpg';
 import anillo3 from '../../images/anillo3.jpg';
+import ItemCount from "../molecules/ItemCount";
 
 const arrayProductos=[{
     id: 1,
