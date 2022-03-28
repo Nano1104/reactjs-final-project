@@ -53,6 +53,7 @@
 
 
 /* ---------------------- MAIN STYLES ---------------------- */
+/* COUNTA-BOX STYLES */
 .countBox{
   outline: 2px solid black;
   border-radius: 10px;
@@ -86,13 +87,15 @@
   color: green;
 }
 
-.cajaItem{
-  display: flex;
-}
+/* ITEM-LIST-CONTAINER STYLES */
 .item{
   margin: 20px;
 }
-.imagenP{
+.cajaItem{
+  display: flex;
+  flex-wrap: wrap;
+}
+.itemImage{
   width: 250px;
   height: 250px;
 }

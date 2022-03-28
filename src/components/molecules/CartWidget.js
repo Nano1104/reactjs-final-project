@@ -6,9 +6,9 @@ import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
 
 const Cart=()=>{
-    return <div class="d-flex">
-            <FontAwesomeIcon icon={faCartShopping} class='cart-shopping mx-3'/>
-            <p class='lenght'>0</p>
+    return <div className="d-flex">
+            <FontAwesomeIcon icon={faCartShopping} className='cart-shopping mx-3'/>
+            <p className='lenght'>0</p>
         </div>
 }
 

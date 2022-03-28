@@ -4,15 +4,9 @@ import Item from './Item'
 
 
 export default function ItemList({items}){
-    return <ul class="cajaItem">
+    return <ul className="cajaItem">
         {
-            items.map(item => <Item
-                                id={item.id}
-                                tiltle={item.tiltle}
-                                description={item.description}
-                                price={item.price}
-                                pictureUrl={item.url}
-                            />)
+            items.map(item => <Item props={item} key={item.id}/>)
         }
     </ul>
 }

@@ -30,7 +30,7 @@ export default function ItemCount ({stock, initial, onAdd}){
         setTextoLimite();
     }
     
-    return <div class="countBox">
+    return <div className="countBox">
             <h2>Stock Disponible: {stock}</h2>
             <p>{cantidad}</p>
             <p style={{fontSize: "20px"}}>{textoLimite}</p>
@@ -39,7 +39,7 @@ export default function ItemCount ({stock, initial, onAdd}){
             <button onClick={incrementar} id="btn-plus">+</button>
             </div>
             <button 
-            type="button" class="btn btn-secondary" onClick={finalizarCompra} 
+            type="button" className="btn btn-secondary" onClick={finalizarCompra} 
             >AGREGAR AL CARRITO</button>
             
             {/* cartel que aparece si se finaliza la compra */}

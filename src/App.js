@@ -20,9 +20,7 @@ function App() {
     <div>
     <header>
       <NavBar />
-      <ItemListContainer
-        
-      />   
+      <ItemListContainer />   
       <ItemCount
         stock={stock}
         initial={initial}
