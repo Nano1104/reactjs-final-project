@@ -91,11 +91,16 @@
 .item{
   margin: 20px;
 }
-.cajaItem{
+.cajaList{
   display: flex;
   flex-wrap: wrap;
 }
 .itemImage{
   width: 250px;
   height: 250px;
+}
+.itemDetail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

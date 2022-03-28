@@ -6,6 +6,7 @@ import './App.css';
 import NavBar from './components/organisms/NavBar';
 import ItemListContainer from './components/organisms/ItemListContainer';
 import ItemCount from './components/molecules/ItemCount';
+import ItemDetailContainer from './components/organisms/ItemDetailContainer';
 
 const stock=5;
 const initial=1;
@@ -21,6 +22,7 @@ function App() {
     <header>
       <NavBar />
       <ItemListContainer />   
+      <ItemDetailContainer />
       <ItemCount
         stock={stock}
         initial={initial}

@@ -4,7 +4,7 @@ import Item from './Item'
 
 
 export default function ItemList({items}){
-    return <ul className="cajaItem">
+    return <ul className="cajaList">
         {
             items.map(item => <Item props={item} key={item.id}/>)
         }
