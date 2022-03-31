@@ -1,33 +1,33 @@
-/* { Component } para los componentes de clase */
-import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+/* importamos bootstrap */
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* importamos los componentes */
 import NavBar from './components/organisms/NavBar';
 import ItemListContainer from './components/organisms/ItemListContainer';
 import ItemCount from './components/molecules/ItemCount';
 import ItemDetailContainer from './components/organisms/ItemDetailContainer';
-
-const stock=5;
-const initial=1;
-const onAdd=(cantidad)=>{
-  if(cantidad==0){
-    alert("Lo siento no tienes stock que comprar");
-  }
-}
+import ErrorComponente from './components/molecules/ErrorComponente'
 
 function App() {
   return (
     <div>
     <header>
+      <BrowserRouter>
       <NavBar />
-      <ItemListContainer />   
-      <ItemDetailContainer />
-      <ItemCount
-        stock={stock}
-        initial={initial}
-        onAdd={onAdd}
-      />
+      <Routes>
+        <Route path="/" element={<ItemListContainer /> } />
+        <Route path="/category/:id" element={<ItemListContainer /> } />
+        <Route path="/detail/:id" element={<ItemDetailContainer /> } />
+      </Routes>
+      {/* <ItemCount stock={stock}
+                initial={initial}
+                onAdd={onAdd} /> */}
+      
+      </BrowserRouter>
+
+      
     </header>
     </div>    
   );
