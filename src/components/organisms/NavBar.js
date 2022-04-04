@@ -19,6 +19,7 @@ const NavBar=()=>{
             <Nav.Link as={Link} to="/category/Aro">Aros</Nav.Link>
             <Nav.Link as={Link} to="/category/Collar">Collares</Nav.Link>
             <Nav.Link as={Link} to="/category/Pulsera">Pulseras</Nav.Link>
+            <Nav.Link as={Link} to="/prueba">Prueba</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

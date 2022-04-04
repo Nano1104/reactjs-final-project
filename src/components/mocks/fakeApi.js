@@ -13,7 +13,7 @@ import aro5 from '../../images/aro5.jpg';
 import collar1 from '../../images/collar1.jpg';
 import collar2 from '../../images/collar2.jpg';
 import collar3 from '../../images/collar3.jpg';
-import collar4 from '../../images/collar4.jpg';
+import collar4 from '../../images/collar4.jpg';     
 import collar5 from '../../images/collar5.jpg';
 import pulsera1 from '../../images/pulsera1.jpg';
 import pulsera2 from '../../images/pulsera2.jpeg';

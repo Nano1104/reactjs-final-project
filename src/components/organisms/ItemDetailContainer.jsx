@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
     const [loading, setLoading]=useState(false);
 
     const {id}=useParams();
-  
+    
     useEffect(() => {
         setLoading(true);
         getItems.then((res)=>{

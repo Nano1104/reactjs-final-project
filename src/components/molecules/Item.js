@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {Card, Button} from 'react-bootstrap'
 
 export default function Item({props}){
+
     return <Card style={{ width: '18rem' }} className="m-3">
             <Card.Img variant="top" src={props.url} className="itemImage" />
             <Card.Body>
@@ -12,7 +13,7 @@ export default function Item({props}){
             </Card.Text>
             <div className="text-center">
                 <Link to={`/detail/${props.id}`}><Button variant="primary">VER</Button></Link>
-                <Button variant="primary" className="m-1">AGREGAR</Button>
+                <Button variant="primary" className="m-1">AGREGAR</Button> 
             </div>
                 
             </Card.Body>

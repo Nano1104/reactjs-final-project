@@ -8,22 +8,23 @@ import NavBar from './components/organisms/NavBar';
 import ItemListContainer from './components/organisms/ItemListContainer';
 import ItemCount from './components/molecules/ItemCount';
 import ItemDetailContainer from './components/organisms/ItemDetailContainer';
-import ErrorComponente from './components/molecules/ErrorComponente'
+import Cart from './components/organisms/Cart';
+
 
 function App() {
+
   return (
     <div>
     <header>
       <BrowserRouter>
       <NavBar />
-      <Routes>
+
+      <Routes> 
         <Route path="/" element={<ItemListContainer /> } />
         <Route path="/category/:id" element={<ItemListContainer /> } />
         <Route path="/detail/:id" element={<ItemDetailContainer /> } />
+        <Route path="/cart" element={<Cart /> } />
       </Routes>
-      {/* <ItemCount stock={stock}
-                initial={initial}
-                onAdd={onAdd} /> */}
       
       </BrowserRouter>
 
