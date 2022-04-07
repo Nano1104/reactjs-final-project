@@ -39,55 +39,15 @@
   }
 }
 
-/* ---------------------- HEADE STYLES ---------------------- */
-
-/* estilos al cart */
-.cart-shopping{
-  width: 100%;
-  font-size: 2em;
-  /* outline: 2px solid black; */
-}
-.lenght {
-  font-size: 1.5em;
-  font-weight: 500;
-  color: white;
-  margin-right: 100px;
-}
-
 
 /* ---------------------- MAIN STYLES ---------------------- */
-/* COUNTA-BOX STYLES */
-.countBox{
-  outline: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px black;
-  width: 25%;
-  height: 300px;
-  margin: 50px auto;
-  display:  flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.carrito{
   font-size: 2em;
+  margin-right: 50px;
 }
-
-.countBox div button {
-  background: none;
-  border: none;
-  border: 1px solid #555;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-#btn-less:hover{
-  box-shadow: 0px 0px 3px #000;
-  transition: .2s all;
-  color: red;
-}
-#btn-plus:hover{
-  box-shadow: 0px 0px 3px #000;
-  transition: .2s all;
-  color: green;
+.length{
+  margin-right: 50px;
+  font-size: 2em;
 }
 
 /* ITEM-LIST-CONTAINER STYLES */
@@ -103,11 +63,7 @@
   height: 300px;
   box-shadow: 0px 0px 7px black;
 }
-.itemDetail{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+
 #navLog{
   width: 3vw;
   height: 6vh;

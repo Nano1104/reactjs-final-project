@@ -27,7 +27,8 @@ const arrayProductos=[{
     stock: 9,
     category: "Anillo",
     price: 300,
-    url: anillo1
+    url: anillo1,
+    amount: 1
 },
 {
     id: 2,
@@ -35,7 +36,8 @@ const arrayProductos=[{
     stock: 5,
     category: "Anillo",
     price: 475,
-    url: anillo2
+    url: anillo2,
+    amount: 1
 },
 {
     id: 3,
@@ -43,7 +45,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Anillo",
     price: 200,
-    url: anillo3
+    url: anillo3,
+    amount: 1
 },
 {
     id: 4,
@@ -51,7 +54,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Anillo",
     price: 430,
-    url: anillo4
+    url: anillo4,
+    amount: 1
 },
 {
     id: 5,
@@ -59,7 +63,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Anillo",
     price: 400,
-    url: anillo5
+    url: anillo5,
+    amount: 1
 },
 {
     id: 6,
@@ -67,7 +72,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Aro",
     price: 500,
-    url: aro1
+    url: aro1,
+    amount: 1
 },
 {
     id: 7,
@@ -75,7 +81,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Aro",
     price: 200,
-    url: aro2
+    url: aro2,
+    amount: 1
 },
 {
     id: 8,
@@ -83,7 +90,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Aro",
     price: 400,
-    url: aro3
+    url: aro3,
+    amount: 1
 },
 {
     id: 9,
@@ -91,7 +99,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Aro",
     price: 300,
-    url: aro4
+    url: aro4,
+    amount: 1
 },
 {
     id: 10,
@@ -99,7 +108,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Aro",
     price: 225,
-    url: aro5
+    url: aro5,
+    amount: 1
 },
 {
     id: 11,
@@ -107,7 +117,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Collar",
     price: 350,
-    url: collar1
+    url: collar1,
+    amount: 1
 },
 {
     id: 12,
@@ -115,7 +126,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Collar",
     price: 600,
-    url: collar2
+    url: collar2,
+    amount: 1
 },
 {
     id: 13,
@@ -123,7 +135,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Collar",
     price: 600,
-    url: collar3
+    url: collar3,
+    amount: 1
 },
 {
     id: 14,
@@ -131,7 +144,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Collar",
     price: 500,
-    url: collar4
+    url: collar4,
+    amount: 1
 },
 {
     id: 15,
@@ -139,7 +153,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Collar",
     price: 480,
-    url: collar5
+    url: collar5,
+    amount: 1
 },
 {
     id: 16,
@@ -147,7 +162,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Pulsera",
     price: 450,
-    url: pulsera1
+    url: pulsera1,
+    amount: 1
 },
 {
     id: 17,
@@ -155,7 +171,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Pulsera",
     price: 750,
-    url: pulsera2
+    url: pulsera2,
+    amount: 1
 },
 {
     id: 18,
@@ -163,7 +180,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Pulsera",
     price: 800,
-    url: pulsera3
+    url: pulsera3,
+    amount: 1
 },
 {
     id: 19,
@@ -171,7 +189,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Pulsera",
     price: 800,
-    url: pulsera4
+    url: pulsera4,
+    amount: 1
 },
 {
     id: 20,
@@ -179,7 +198,8 @@ const arrayProductos=[{
     stock: 7,
     category: "Pulsera",
     price: 650,
-    url: pulsera5
+    url: pulsera5,
+    amount: 1
 }]
 
 /* exportamos la promesa hacia el ItemListContainer */

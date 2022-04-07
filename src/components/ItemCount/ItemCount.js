@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom"
 
 export default function ItemCount ({stock, cantidad, setCantidad, onAdd}){
     
@@ -14,7 +13,7 @@ export default function ItemCount ({stock, cantidad, setCantidad, onAdd}){
         }
     }
 
-    return <div className="">
+    return <div className="d-flex align-items-center flex-column">
         <strong>Stock Disponible: {stock}</strong>
         <div>
 
@@ -22,10 +21,7 @@ export default function ItemCount ({stock, cantidad, setCantidad, onAdd}){
         <span>{cantidad}</span>
         <button onClick={handleIncrementar} className="btn btn-primary m-2">+</button>
         </div>
-        <button className="btn btn-primary" onClick={onAdd}>AGREGAR PRODUCTO</button>
-        <Link to="/cart">
-            <button className="btn btn-primary">FINALIZAR COMPRA</button>
-        </Link>
+        <button className="btn btn-primary m-1" onClick={onAdd}>AGREGAR PRODUCTO</button>
     </div>
 
 }

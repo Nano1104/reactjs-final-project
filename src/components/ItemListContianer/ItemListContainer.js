@@ -1,9 +1,13 @@
-
-import ItemList from "../molecules/ItemList"
-import { useEffect, useState } from "react";
 /* importamos la promesa de fakeApi */
 import { getItems } from "../mocks/fakeApi"
+
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import ItemList from "../ItemList/ItemList"
+
+
+
 
 const ItemListContainer=()=>{
     const [productos, setProductos]=useState([]);

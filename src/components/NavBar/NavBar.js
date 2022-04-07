@@ -1,11 +1,12 @@
 import React from "react";
-import Cart from '../molecules/CartWidget'
+import CartWidget from '../CartWidget/CartWidget'
 import {Navbar, Container, Nav} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import logo from '../../images/logo.jpeg'
 
 const NavBar=()=>{
     return (
+      <>
       <Navbar className="bg-secondary bg-gradient" expand="lg">
       <Container>
         <Navbar.Brand>
@@ -19,12 +20,13 @@ const NavBar=()=>{
             <Nav.Link as={Link} to="/category/Aro">Aros</Nav.Link>
             <Nav.Link as={Link} to="/category/Collar">Collares</Nav.Link>
             <Nav.Link as={Link} to="/category/Pulsera">Pulseras</Nav.Link>
-            <Nav.Link as={Link} to="/prueba">Prueba</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <Cart />
-    </Navbar>
+      <CartWidget />
+      </Navbar>
+      </>
+      
     )
 }
 
