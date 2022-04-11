@@ -60,7 +60,7 @@ const arrayProductos=[{
 {
     id: 5,
     description: 'Anillo de oro con Perla',
-    stock: 7,
+    stock: 0,
     category: "Anillo",
     price: 400,
     url: anillo5,

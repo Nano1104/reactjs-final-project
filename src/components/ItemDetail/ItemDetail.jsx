@@ -2,7 +2,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 
-import {useState, useContext } from 'react' 
+import {useState, useContext} from 'react' 
 import {CartContext} from "../Context/CartContext"
 
 /* Props para el ItemCount */
@@ -41,14 +41,23 @@ const ItemDetail = ({producto}) => {
           <h4>PRECIO: {price}ARS</h4>
 
           {
-            !isInCart(id)
-              ? <ItemCount stock={stock}
-                  cantidad={cantidad}
-                  setCantidad={setCantidad}
-                  onAdd={agregarAlCarrito} />
-              : <Link to="/cart">
-                  <button className="btn btn-primary">FINALIZAR COMPRA</button>
-                </Link>
+            stock > 0 &&
+            <>
+              {
+                !isInCart(id)
+                  ? <ItemCount stock={stock}
+                      cantidad={cantidad}
+                      setCantidad={setCantidad}
+                      onAdd={agregarAlCarrito} />
+                  : <Link to="/cart">
+                      <button className="btn btn-primary">FINALIZAR COMPRA</button>
+                    </Link>
+              }
+            </>
+          }
+          {
+            stock === 0 &&
+            <strong style={{color: "red"}}>Lo siento este producto no tiene stock</strong>
           }
 
           <button onClick={handleNavigate} className="btn btn-primary">VOLVER</button>  

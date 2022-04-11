@@ -6,13 +6,19 @@ import {CartContext} from "../Context/CartContext"
 
 const CartWidget=()=>{
 
-    const {cartQuantity}=useContext(CartContext);
+    const {cartQuantity, cart}=useContext(CartContext);
 
     return <>
-            <Link to="/cart">
-                <FaShoppingCart className="carrito"/>
-            </Link>
-            <span className="length">{cartQuantity()}</span>
+            {
+                cart.length > 0 &&
+                <>
+                    <Link to="/cart">
+                        <FaShoppingCart className="carrito"/>
+                    </Link>
+                    <span className="length">{cartQuantity()}</span>
+                </>
+            }
+            
     </>
 }
 
