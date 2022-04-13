@@ -14,7 +14,7 @@ const onAdd=(cantidad)=>{
 
 
 const ItemDetail = ({producto}) => {
-  const {id, description, stock, category, price, url, amount} = producto;
+  const {id, description, stock, category, price, url} = producto;
 
     const {addItem, isInCart}=useContext(CartContext)
 
@@ -26,7 +26,7 @@ const ItemDetail = ({producto}) => {
     const [cantidad, setCantidad]=useState(1);
 
     const agregarAlCarrito=()=>{
-      const itemAdd={id, description, stock, category, price, url, amount}
+      const itemAdd={id, description, stock, category, price, url, cantidad}
       addItem(itemAdd);
       console.log(itemAdd);
     }
@@ -48,7 +48,7 @@ const ItemDetail = ({producto}) => {
                   ? <ItemCount stock={stock}
                       cantidad={cantidad}
                       setCantidad={setCantidad}
-                      onAdd={agregarAlCarrito} />
+                      onAdd={agregarAlCarrito} /> 
                   : <Link to="/cart">
                       <button className="btn btn-primary">FINALIZAR COMPRA</button>
                     </Link>

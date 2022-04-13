@@ -28,7 +28,6 @@ const arrayProductos=[{
     category: "Anillo",
     price: 300,
     url: anillo1,
-    amount: 1
 },
 {
     id: 2,
@@ -37,7 +36,6 @@ const arrayProductos=[{
     category: "Anillo",
     price: 475,
     url: anillo2,
-    amount: 1
 },
 {
     id: 3,
@@ -46,7 +44,6 @@ const arrayProductos=[{
     category: "Anillo",
     price: 200,
     url: anillo3,
-    amount: 1
 },
 {
     id: 4,
@@ -55,7 +52,6 @@ const arrayProductos=[{
     category: "Anillo",
     price: 430,
     url: anillo4,
-    amount: 1
 },
 {
     id: 5,
@@ -64,7 +60,6 @@ const arrayProductos=[{
     category: "Anillo",
     price: 400,
     url: anillo5,
-    amount: 1
 },
 {
     id: 6,
@@ -73,7 +68,6 @@ const arrayProductos=[{
     category: "Aro",
     price: 500,
     url: aro1,
-    amount: 1
 },
 {
     id: 7,
@@ -82,7 +76,6 @@ const arrayProductos=[{
     category: "Aro",
     price: 200,
     url: aro2,
-    amount: 1
 },
 {
     id: 8,
@@ -91,7 +84,6 @@ const arrayProductos=[{
     category: "Aro",
     price: 400,
     url: aro3,
-    amount: 1
 },
 {
     id: 9,
@@ -100,7 +92,6 @@ const arrayProductos=[{
     category: "Aro",
     price: 300,
     url: aro4,
-    amount: 1
 },
 {
     id: 10,
@@ -109,7 +100,6 @@ const arrayProductos=[{
     category: "Aro",
     price: 225,
     url: aro5,
-    amount: 1
 },
 {
     id: 11,
@@ -118,7 +108,6 @@ const arrayProductos=[{
     category: "Collar",
     price: 350,
     url: collar1,
-    amount: 1
 },
 {
     id: 12,
@@ -127,7 +116,6 @@ const arrayProductos=[{
     category: "Collar",
     price: 600,
     url: collar2,
-    amount: 1
 },
 {
     id: 13,
@@ -136,7 +124,6 @@ const arrayProductos=[{
     category: "Collar",
     price: 600,
     url: collar3,
-    amount: 1
 },
 {
     id: 14,
@@ -145,7 +132,6 @@ const arrayProductos=[{
     category: "Collar",
     price: 500,
     url: collar4,
-    amount: 1
 },
 {
     id: 15,
@@ -154,7 +140,6 @@ const arrayProductos=[{
     category: "Collar",
     price: 480,
     url: collar5,
-    amount: 1
 },
 {
     id: 16,
@@ -163,7 +148,6 @@ const arrayProductos=[{
     category: "Pulsera",
     price: 450,
     url: pulsera1,
-    amount: 1
 },
 {
     id: 17,
@@ -172,7 +156,6 @@ const arrayProductos=[{
     category: "Pulsera",
     price: 750,
     url: pulsera2,
-    amount: 1
 },
 {
     id: 18,
@@ -181,7 +164,6 @@ const arrayProductos=[{
     category: "Pulsera",
     price: 800,
     url: pulsera3,
-    amount: 1
 },
 {
     id: 19,
@@ -190,7 +172,6 @@ const arrayProductos=[{
     category: "Pulsera",
     price: 800,
     url: pulsera4,
-    amount: 1
 },
 {
     id: 20,
@@ -199,7 +180,6 @@ const arrayProductos=[{
     category: "Pulsera",
     price: 650,
     url: pulsera5,
-    amount: 1
 }]
 
 /* exportamos la promesa hacia el ItemListContainer */
