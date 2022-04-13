@@ -1,10 +1,9 @@
-/* importamos la promesa de fakeApi */
-import { getItems } from "../mocks/fakeApi"
-
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, query, where} from "firebase/firestore"
 
 import ItemList from "../ItemList/ItemList"
+import {db} from "../Firebase/Firebase"
 
 
 
@@ -17,15 +16,19 @@ const ItemListContainer=()=>{
 
     useEffect(()=>{
         setLoading(true);
-        getItems.then((res)=>{
-            if(id){
-                setProductos(res.filter((prod)=>prod.category===id));
-            }else{
-                setProductos(res);
-            }
-        });
-        getItems.catch(err=>{alert(err)});
-        getItems.finally(()=>{setLoading(false);});
+        
+        // armamos la referencia //
+        const productosRef=collection(db, "Productos");
+        const q= id ? query(productosRef, where('category', '==', id)) : productosRef
+        // la llamamos de manera async //
+        getDocs(q)
+            .then((res) => {
+                const itemdDb=res.docs.map((doc) => ({id: doc.id, ...doc.data()}));
+                console.log(itemdDb)
+                setProductos(itemdDb);
+            })
+
+        .finally(()=>{setLoading(false);});
     }, [id]);
 
     return <div>

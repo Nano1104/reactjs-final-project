@@ -3,6 +3,9 @@ import {getItems} from '../mocks/fakeApi'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom';
 
+import {db} from "../Firebase/Firebase"
+import {doc, getDoc} from "firebase/firestore"
+
 const ItemDetailContainer = () => {
   
     const [producto, setProducto]=useState({});
@@ -12,11 +15,17 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
         setLoading(true);
-        getItems.then((res)=>{
-          setProducto(res.find((prod)=>prod.id===Number(id)));
-        });
-        /* getItems.catch(err=>{alert(err)}); */
-        getItems.finally(() => {setLoading(false);});
+        
+        // armamos la referencia a un producto y su id //
+        const itemDocRef = doc(db, "Productos", id)
+        // trabajamos con esa referencia //
+        getDoc(itemDocRef)
+          .then((res) => {
+            const prodDb={id: res.id, ...res.data()}
+            setProducto(prodDb)
+          })
+
+        .finally(() => {setLoading(false);});
     }, [id]);
 
   return (
