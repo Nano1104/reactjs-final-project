@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import {getItems} from '../mocks/fakeApi'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom';
 
