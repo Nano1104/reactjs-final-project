@@ -22,8 +22,8 @@ const Cart = () => {
             <>
               <div key={prod.id} className="d-flex align-items-center flex-column">
                   <h3>{prod.description}</h3>
-                  <p>Precio: {prod.price * prod.amount}</p>
-                  <p>Cantidad: <strong>{prod.amount}</strong></p>
+                  <p>Precio: {prod.price * prod.cantidad}</p>
+                  <p>Cantidad: <strong>{prod.cantidad}</strong></p>
                   <button onClick={()=> removeItem(prod.id)}>🗑️</button>
               </div>
               <hr/>
