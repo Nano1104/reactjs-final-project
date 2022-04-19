@@ -33,6 +33,7 @@ const Cart = () => {
           <div className="d-flex align-items-center flex-column">
             <h3>PRECIO FINAL: {precioTotal()}</h3>
             <button className="btn btn-danger" onClick={emptyCart}>VACIAR CARRO</button>
+            <Link to="/checkout"><button className="btn btn-success m-1">Terminar mi compra</button></Link>
           </div>
       </div>
     </>
