@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
         <hr></hr>
         {loading ? <strong className="d-flex justify-content-center">Renderizando ropiedades del producto</strong> : ''}
         {/* traemos el ItemDetail y le pasamos las props del prod.find */}
-        <ItemDetail producto={producto}/>
+        <ItemDetail id={producto}/>
     </div>
   )
 }

@@ -1,9 +1,11 @@
-
 import { useNavigate, Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 
 import {useState, useContext} from 'react' 
 import {CartContext} from "../Context/CartContext"
+
+import {Card} from 'react-bootstrap'
+const cargarImagen2 = require.context('./../../images', true);
 
 /* Props para el ItemCount */
 const onAdd=(cantidad)=>{
@@ -13,9 +15,8 @@ const onAdd=(cantidad)=>{
 }
 
 
-const ItemDetail = ({producto}) => {
-  const {id, description, stock, category, price, url} = producto;
-
+const ItemDetail = ({id}) => {
+  const {description, stock, category, price, url} = id;
     const {addItem, isInCart}=useContext(CartContext)
 
     const navigate=useNavigate();
@@ -37,7 +38,10 @@ const ItemDetail = ({producto}) => {
       <div className="d-flex align-items-center flex-column">
           <h4>{description}</h4>
           <strong>Stock disponible: {stock}</strong>
-          <img src={url} alt="" className="itemImage m-2"></img>
+
+          /* ERROR */
+          <img src={cargarImagen2(`${url}`)} alt="" className="itemImage m-2"></img>
+
           <h4>PRECIO: {price}ARS</h4>
 
           {

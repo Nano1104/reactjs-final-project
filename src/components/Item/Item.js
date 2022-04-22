@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Card, Button} from 'react-bootstrap'
+/* renderizamos las imagenes desde la db */
 const cargarImagen = require.context('./../../images', true);
 
 export default function Item({props}){
@@ -13,7 +14,7 @@ export default function Item({props}){
                 {props.description}
             </Card.Text>
             <div className="text-center">
-                <Link to={`/detail/${props.id}`}><Button variant="primary">VER</Button></Link>
+                <Link to={`/item/${props.id}`}><Button variant="primary">VER</Button></Link>
             </div>
                 
             </Card.Body>
