@@ -5,27 +5,20 @@ import {Card, Button} from 'react-bootstrap'
 const cargarImagen = require.context('./../../images', true);
 
 export default function Item({props}){
+    const {description, url, id} = props;
 
     return <Card style={{ width: '18rem' }} className="m-3">
-            <Card.Img variant="top" src={cargarImagen(`${props.url}`)} className="itemImage" />
+            <Card.Img variant="top" src={cargarImagen(`${url}`)} className="itemImage" />
             <Card.Body>
             
             <Card.Text className="text-center">
-                {props.description}
+                {description}
             </Card.Text>
             <div className="text-center">
-                <Link to={`/item/${props.id}`}><Button variant="primary">VER</Button></Link>
+                <Link to={`/item/${id}`}><Button variant="primary">VER</Button></Link>
             </div>
                 
             </Card.Body>
         </Card>
         
 }
-
-{/* <div className="item">
-            <li>
-                <h2>{props.id} - {props.tiltle}</h2>
-                <img src={props.url} alt="" className="itemImage"></img>
-                <Link to={`/detail/${props.id}`}><button className="btn btn-primary">VER</button></Link>
-            </li>
-        </div> */}

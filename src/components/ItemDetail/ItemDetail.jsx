@@ -1,11 +1,10 @@
 import { useNavigate, Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
-
+import {Card} from 'react-bootstrap'
 import {useState, useContext} from 'react' 
 import {CartContext} from "../Context/CartContext"
 
-import {Card} from 'react-bootstrap'
-const cargarImagen2 = require.context('./../../images', true);
+const cargarImagen = require.context('./../../images', true);
 
 /* Props para el ItemCount */
 const onAdd=(cantidad)=>{
@@ -38,10 +37,7 @@ const ItemDetail = ({id}) => {
       <div className="d-flex align-items-center flex-column">
           <h4>{description}</h4>
           <strong>Stock disponible: {stock}</strong>
-
-          /* ERROR */
-          <img src={cargarImagen2(`${url}`)} alt="" className="itemImage m-2"></img>
-
+          <Card.Img variant="top" src={cargarImagen(`${url}`)} className="itemImage" />
           <h4>PRECIO: {price}ARS</h4>
 
           {

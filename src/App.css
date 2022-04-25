@@ -41,6 +41,10 @@
 
 
 /* ---------------------- MAIN STYLES ---------------------- */
+.navBar{
+  background-color: #555;
+}
+
 .carrito{
   font-size: 2em;
   margin-right: 50px;
