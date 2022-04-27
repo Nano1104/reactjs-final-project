@@ -12,7 +12,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout'
 import { CartProvider } from './components/Context/CartContext';
-
+import {NavBarProvider} from './components/NavBarContext/NarBarContex'
 
 function App() {
 
@@ -21,20 +21,21 @@ function App() {
   return (
     <>
     <CartProvider>
+    <NavBarProvider>
         <BrowserRouter>
       
-        <Routes> 
-          <Route path="/" element={<NavBar />} />  
-          <Route path="/productos" element={<ItemListContainer /> } />
-          <Route path="/category/:id" element={<ItemListContainer /> } />
-          <Route path="/item/:id" element={<ItemDetailContainer /> } />
-          <Route path="/cart" element={<Cart /> } />
-          <Route path="/checkout" element={<Checkout />} />
-
-          {/* <Route path="/" element={<Error />} */}
-        </Routes>
+          <Routes> 
+            <Route path="/" element={<NavBar />} />  
+            <Route path="/productos" element={<ItemListContainer /> } />
+            <Route path="/category/:id" element={<ItemListContainer /> } />
+            <Route path="/item/:id" element={<ItemDetailContainer /> } />
+            <Route path="/cart" element={<Cart /> } />
+            <Route path="/checkout" element={<Checkout />} />
+            {/* <Route path="/" element={<Error />} */}
+          </Routes>
             
         </BrowserRouter> 
+    </NavBarProvider>
     </CartProvider>
     </>
     

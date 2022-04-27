@@ -1,21 +1,16 @@
 import { useNavigate, Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import {Card} from 'react-bootstrap'
+
 import {useState, useContext} from 'react' 
 import {CartContext} from "../Context/CartContext"
+import {NavBarContext} from "../NavBarContext/NarBarContex"
 
-const cargarImagen = require.context('./../../images', true);
-
-/* Props para el ItemCount */
-const onAdd=(cantidad)=>{
-  if(cantidad==0){
-    alert("Lo siento no tienes stock que comprar");
-  }
-}
 
 
 const ItemDetail = ({id}) => {
   const {description, stock, category, price, url} = id;
+    const {handleNavBarState}=useContext(NavBarContext)
     const {addItem, isInCart}=useContext(CartContext)
 
     const navigate=useNavigate();
@@ -29,15 +24,15 @@ const ItemDetail = ({id}) => {
       const itemAdd={id, description, stock, category, price, url, cantidad}
       addItem(itemAdd);
       console.log(itemAdd);
+      handleNavBarState()
     }
 
   return (
     <>
 
       <div className="d-flex align-items-center flex-column">
-          <h4>{description}</h4>
           <strong>Stock disponible: {stock}</strong>
-          <Card.Img variant="top" src={cargarImagen(`${url}`)} className="itemImage" />
+          <img variant="top" src={url} className="itemImage" />
           <h4>PRECIO: {price}ARS</h4>
 
           {

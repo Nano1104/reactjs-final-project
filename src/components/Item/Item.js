@@ -7,7 +7,7 @@ const cargarImagen = require.context('./../../images', true);
 export default function Item({props}){
     const {description, url, id} = props;
 
-    return <Card style={{ width: '18rem' }} className="m-3">
+    return <Card style={{ width: '18rem', borderRadius: "5%" }} className="m-3">
             <Card.Img variant="top" src={cargarImagen(`${url}`)} className="itemImage" />
             <Card.Body>
             

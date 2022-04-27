@@ -52,9 +52,13 @@ const ItemListContainer=()=>{
         </Container>
         <CartWidget />
         </Navbar>
-
-        {loading ? <strong className="d-flex justify-content-center">Renderizando elementos...</strong> : ''}
-        <ItemList items={productos}/>
+        <div className="fondo2">
+          {loading
+          ?<strong className="d-flex justify-content-center text-white">Renderizando elementos...</strong>
+          : ''}
+          <ItemList items={productos}/>
+        </div>
+        
     </div>
 }
 

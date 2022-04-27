@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import React, { useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom';
-
+import {Navbar} from "react-bootstrap"
+//componentes
+import CartWidget from '../CartWidget/CartWidget';
+import ItemDetail from '../ItemDetail/ItemDetail'
+//context
+import {NavBarContext} from "../NavBarContext/NarBarContex"
+//variables de firebase
 import {db} from "../Firebase/Firebase"
 import {doc, getDoc} from "firebase/firestore"
 
+
 const ItemDetailContainer = () => {
-  
+    const {cartLength}=useContext(NavBarContext)
     const [producto, setProducto]=useState({});
     const [loading, setLoading]=useState(false);
 
@@ -28,14 +34,32 @@ const ItemDetailContainer = () => {
     }, [id]);
 
   return (
-    <div>
-        <hr></hr>
-        <h2 className="d-flex justify-content-center">Detalle Producto</h2>  
-        <hr></hr>
-        {loading ? <strong className="d-flex justify-content-center">Renderizando ropiedades del producto</strong> : ''}
-        {/* traemos el ItemDetail y le pasamos las props del prod.find */}
-        <ItemDetail id={producto}/>
-    </div>
+    <>
+      {/* El state de cartLength se setea en ItemCount, y si es true se renderiza navBar con el cartWidget*/}
+        {
+          cartLength
+          ? <Navbar className="navBar" expand="lg">
+              <CartWidget />
+            </Navbar>
+          : ''
+        }
+        
+        {
+          loading
+            ?
+            <strong className="d-flex justify-content-center">
+              Renderizando ropiedades del producto
+            </strong>
+            :
+            <>
+              <hr></hr>
+                <h2 className="d-flex justify-content-center">{producto.description}</h2>  
+              <hr></hr>
+              {/* traemos el ItemDetail y le pasamos las props del prod.find */}
+              <ItemDetail id={producto}/>
+            </>  
+        }
+    </>
   )
 }
 
