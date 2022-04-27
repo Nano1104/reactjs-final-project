@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom';
 
 import ItemList from "../ItemList/ItemList"
 import CartWidget from "../CartWidget/CartWidget";
-
+import Loading from '../Loading/Loading'
 
 
 const ItemListContainer=()=>{
@@ -54,8 +54,9 @@ const ItemListContainer=()=>{
         </Navbar>
         <div className="fondo2">
           {loading
-          ?<strong className="d-flex justify-content-center text-white">Renderizando elementos...</strong>
-          : ''}
+          ?<Loading text={"Renderizando productos..."}/>
+          : ''
+          }
           <ItemList items={productos}/>
         </div>
         

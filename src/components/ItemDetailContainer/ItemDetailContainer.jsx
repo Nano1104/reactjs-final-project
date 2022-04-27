@@ -4,6 +4,7 @@ import {Navbar} from "react-bootstrap"
 //componentes
 import CartWidget from '../CartWidget/CartWidget';
 import ItemDetail from '../ItemDetail/ItemDetail'
+import Loading from '../Loading/Loading'
 //context
 import {NavBarContext} from "../NavBarContext/NarBarContex"
 //variables de firebase
@@ -47,9 +48,7 @@ const ItemDetailContainer = () => {
         {
           loading
             ?
-            <strong className="d-flex justify-content-center">
-              Renderizando ropiedades del producto
-            </strong>
+            <Loading text={"Renderizando producto..."}/>
             :
             <>
               <hr></hr>
