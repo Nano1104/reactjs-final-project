@@ -23,12 +23,11 @@ const ItemDetailContainer = () => {
         setLoading(true);
         
         // armamos la referencia a un producto y su id //
-        const itemDocRef = doc(db, "Productos", id)
+        const docRef = doc(db, "Productos", id)
         // trabajamos con esa referencia //
-        getDoc(itemDocRef)
+        getDoc(docRef)
           .then((res) => {
-            const prodDb={id: res.id, ...res.data()}
-            setProducto(prodDb)
+            setProducto({id: res.id, ...res.data()})
           })
 
         .finally(() => {setLoading(false);});
@@ -36,6 +35,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
+    <div className="fondoItemDetailContainer">
       {/* El state de cartLength se setea en ItemCount, y si es true se renderiza navBar con el cartWidget*/}
         {
           cartLength
@@ -52,12 +52,13 @@ const ItemDetailContainer = () => {
             :
             <>
               <hr></hr>
-                <h2 className="d-flex justify-content-center">{producto.description}</h2>  
+                <h2 className="d-flex justify-content-center text-ItemDetail">{producto.description}</h2>  
               <hr></hr>
               {/* traemos el ItemDetail y le pasamos las props del prod.find */}
               <ItemDetail id={producto}/>
             </>  
         }
+      </div>
     </>
   )
 }

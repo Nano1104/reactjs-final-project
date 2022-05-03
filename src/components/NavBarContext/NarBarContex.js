@@ -14,6 +14,7 @@ export const NavBarProvider=({children})=>{
 
     return <NavBarContext.Provider value={{
                 cartLength,
+                setCartLength,
                 handleNavBarState
               }}>
               {children}

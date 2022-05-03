@@ -6,9 +6,14 @@ import {db} from '../Firebase/Firebase'
 import {collection, addDoc, Timestamp, doc, getDoc, updateDoc} from 'firebase/firestore'
 import {Navigate, Link} from 'react-router-dom'
 
+import {NavBarContext} from "../NavBarContext/NarBarContex"
+
+import FinishPurchase from "../FinishPurchase/FinishPurchase"
+
 const Checkout = () => {
 
   const {cart, precioTotal, emptyCart}=useContext(CartContext)
+  const {setCartLength}=useContext(NavBarContext)
   const [orderId, setOrderId]=useState(null)
 
   const handleInputChange = (e) => {
@@ -28,22 +33,20 @@ const Checkout = () => {
       comprador: {...values},
       fechaYHora: Timestamp.fromDate(new Date())
     }
+
     console.log(ordenCompra)
+    /* referencia a collection "orders" */
     const ordersRef = collection(db, 'Orders')
 
-    cart.forEach((item) => {
-        const docRef = doc(db, "Productos", item.id)
-
-        getDoc(docRef)
-            .then((doc)=>{
-                if(doc.data().stock >= item.cantidad){
-                    updateDoc(docRef,{
-                      stock: doc.data().stock - item.cantidad
-                  }) 
-                }else{
-                    alert('No hay stock')
-                }             
-            })
+    cart.forEach((item) =>{
+      const docRef = doc(db, "Productos", item.id) /* <----- esta linea de aqui me tirar error */
+      
+      getDoc(docRef)
+        .then((doc)=>{
+          updateDoc(docRef, {
+            stock: doc.data().stock - item.cantidad
+          })
+      })
     })
 
     /* enviamos la orden a la db y cerramos la compra */
@@ -62,11 +65,7 @@ const Checkout = () => {
   })
 
   if(orderId){
-    return <div>
-      <h2>Tu orden se ha enviado</h2>
-      <p>Aqui esta tu numero de compra: {orderId}</p>
-      <Link to="/"><button className="btn btn-primary">Volver al Inicio</button></Link>
-    </div>
+    return <FinishPurchase order={orderId} name={values.nombre}/>
   }
 
   if(cart.length===0){
@@ -75,12 +74,14 @@ const Checkout = () => {
 
   return (
     <>
-      <h2 className="container m-3">Checkout</h2>
-      <hr/>
 
-      <form onSubmit={handleSubmit}>
+    <div className="fondo3">
+
+      <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center" id="form">
+        <h3 style={{marginTop: "100px", color: "orange", fontSize: "2.5em"}}>CONTACTANOS</h3>
         <input
-          className="form-control my-2"
+          className="form-control"
+          style={{marginTop: "50px"}}
           type={'text'}
           placeholder="Escribe tu nombre"
           value={values.nombre}
@@ -88,7 +89,8 @@ const Checkout = () => {
           onChange={handleInputChange}
         />
         <input
-          className="form-control my-2"
+          className="form-control"
+          style={{marginTop: "50px"}}
           type={'email'}
           placeholder="Escribe tu email"
           value={values.email}
@@ -96,18 +98,22 @@ const Checkout = () => {
           onChange={handleInputChange}
         />
         <input
-          className="form-control my-2"
+          className="form-control"
+          style={{marginTop: "50px"}}
           type={'tel'}
           placeholder="Tu numero de celular"
           value={values.numero}
           name='numero'
           onChange={handleInputChange}
         />
-        <button className="btn btn-primary my-2" type="submit">ENVIAR</button>
+        <button className="btn btn-warning my-4" type="submit" onClick={setCartLength(false)}>ENVIAR</button>
       </form>
+    </div>
       
     </>
   )
 }
 
 export default Checkout
+
+/* armamos la referencia al prod con su id para modificar el stock */

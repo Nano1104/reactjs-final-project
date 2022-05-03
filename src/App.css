@@ -1,11 +1,6 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display+SC:ital@1&display=swap');
-
-.App {
-  text-align: center;
-  font-size: 20px;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display+SC:ital@1&family=Rubik:wght@300&display=swap');
 
 
 /* ---------------------- HEADER STYLES ---------------------- */
@@ -31,6 +26,68 @@ background: linear-gradient(180deg, rgba(192,202,204,1) 12%, rgba(75,75,75,1) 10
   height: 350vh;
   position: relative;
 }
+.fondo4{
+  background-image: url(./images/fondo.png);
+  background-size: 350px 200px;
+  background-repeat: repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.fondoItemDetailContainer{
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  background-image: url(./images/fondo.png);
+  background-size: 350px 200px;
+  background-repeat: repeat;
+  width: 100%;
+  height: 100vh;
+}
+.text-ItemDetail{
+  font-family: 'Playfair Display SC', serif;
+}
+.finishPoster{
+  font-size: 15px;
+  text-align: center;
+  background-color: #ddd;
+  width: 475px;
+  height: 475px;
+  border-radius: 5%;
+  padding: 30px;
+  position: absolute;
+  border: 2px solid black;
+  top: 50px;
+  right: 475px;
+  transition: .5s all;
+}
+.click{
+  background-color: rgb(31, 153, 74);
+  height: 300px;
+  width: 300px;
+  right: 70px;
+  margin-left: 100px;
+  margin-top: -50px;
+  clip-path: polygon(20% 57%, 36% 66%, 63% 26%, 34% 57%);
+}
+.finishPoster:hover{
+  box-shadow: 0px 0px 50px #000;
+}
+.btnFinishPurchase{
+  background-color: #555;
+  color: #ccc;
+  margin-top: 600px;
+  margin-left: 100px;
+  padding: 10px;
+  border: 3px solid black;
+  transition: 1s all;
+  box-shadow: 0px 0px 5px black;
+}
+.btnFinishPurchase:hover{
+  background-color: #bbb;
+  letter-spacing: 1px;
+  color: black;
+  position:relative;
+}
 .bg-image{
   background-image: url(./images/fondo.jpg);
   width: 60%;
@@ -45,6 +102,7 @@ background: linear-gradient(180deg, rgba(192,202,204,1) 12%, rgba(75,75,75,1) 10
   right: 30%;
   bottom: 50%;
 }
+
 /* ---------------------- MAIN STYLES ---------------------- */
 /* LOADING COMPONENT */
 .center{
@@ -108,4 +166,120 @@ background: linear-gradient(180deg, rgba(192,202,204,1) 12%, rgba(75,75,75,1) 10
   width: 3vw;
   height: 6vh;
   border-radius: 50%;
+}
+/* ITEM DETAIL */
+#bg-description{
+  width: 375px;
+  height: 500px;
+  color: black;
+}
+#cantidadModifier button{
+    border: 1px solid black;
+    padding: 3px 20px;
+    transition: .3s all;
+}
+.btn-less:hover{
+    background-color: rgba(255,0,0, 0.5);
+}
+.btn-plus:hover{
+    background-color: rgba(0,0,255, 0.5);
+}
+.btnFinalizarCompra:hover{
+    transition: .2s all;
+    box-shadow: 0px 0px 5px black;
+    font-size: 1.05em;
+}
+
+/* CART LUGAR DE COMPRA */
+.fondoCart{
+  background-image: url(./images/fondo.png);
+  background-size: 350px 200px;
+  background-repeat: repeat;
+  width: 100%;
+  height: 200vh;
+  position: relative;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+}
+.cardCarrito{
+  color: black;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.1em;
+  border: 5px solid black;
+}
+.cardCarrito:hover{
+  background-color: #eee;
+}
+.trash{
+  background: none;
+  border: none;
+  transition: .2s all;
+  border-radius: 10%;
+  margin-left: 10px;
+}
+.trash:hover{
+  box-shadow: 0px 0px 3px black;
+  background-color: white;
+}
+.btnVaciarCarro{
+  border: none;
+  padding: 5px 10px;
+  background-color: #a22;
+  transition: .3s all;
+}
+.btnVaciarCarro:hover{
+  font-size: 1.1em;
+  background-color: #a11;
+  box-shadow: 0px 0px 2px black;
+  color: #ccc;
+}
+.btnTerminarCompra{
+  border: none;
+  padding: 5px 10px;
+  background-color: #5a5;
+  transition: .3s all;
+}
+.btnTerminarCompra:hover{
+  color: #ccc;
+  font-size: 1.1em;
+  box-shadow: 0px 0px 2px black;
+  background-color:  #008f39;
+}
+
+/* EMPTY CART */
+#emptyCard{
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  box-sizing: content-box;
+  border: 3px solid black;
+  background-color: #333;
+  padding: 80px;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+}
+
+/* FORMULARIO */
+.fondo3{
+  background-image: url(./images/fondo.png);
+  background-size: 350px 200px;
+  background-repeat: repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#form input{
+  color: white;
+  text-align: center;
+  width: 35%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+#form input::placeholder{
+  color: white;
 }
