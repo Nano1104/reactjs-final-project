@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* importamos los componentes */
 import NavBar from './components/NavBar/NavBar';
+import ErrorRoute from './components/ErrorRoute/ErrorRoute'
 import ItemListContainer from './components/ItemListContianer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
@@ -31,7 +32,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer /> } />
             <Route path="/cart" element={<Cart /> } />
             <Route path="/checkout" element={<Checkout />} />
-            {/* <Route path="/" element={<Error />} */}
+            <Route path="*" element={<ErrorRoute />} />
           </Routes>
             
         </BrowserRouter> 

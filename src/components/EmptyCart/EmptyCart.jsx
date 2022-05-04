@@ -9,7 +9,7 @@ const EmptyCart = () => {
           <h2 className="mb-3">Tu carrito se encuentra vacio</h2>
           <MdRemoveShoppingCart style={{fontSize: "6em"}} className="mt-4"/>
           <strong className="mt-4">¡Agrega Productos!</strong>
-          <Link to={"/"} className="btn btn-success m-2">Ver Prodcutos</Link>
+          <Link to={"/productos"} className="btn btn-success m-2">Ver Prodcutos</Link>
       </div>
     </>
   )
