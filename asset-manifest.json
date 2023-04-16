@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.0f9c4b51.css",
-    "main.js": "/react-gh-pages/static/js/main.432b38eb.js",
-    "static/js/787.d1242b79.chunk.js": "/react-gh-pages/static/js/787.d1242b79.chunk.js",
-    "static/media/logo.jpeg": "/react-gh-pages/static/media/logo.bbf87fd225ab2c759049.jpeg",
-    "static/media/fondo.jpg": "/react-gh-pages/static/media/fondo.b1a488f361c1ae969895.jpg",
-    "index.html": "/react-gh-pages/index.html",
-    "main.0f9c4b51.css.map": "/react-gh-pages/static/css/main.0f9c4b51.css.map",
-    "main.432b38eb.js.map": "/react-gh-pages/static/js/main.432b38eb.js.map",
-    "787.d1242b79.chunk.js.map": "/react-gh-pages/static/js/787.d1242b79.chunk.js.map"
+    "main.css": "/Joyas-Gil/static/css/main.70f8dd27.css",
+    "main.js": "/Joyas-Gil/static/js/main.89938b52.js",
+    "static/js/787.d1242b79.chunk.js": "/Joyas-Gil/static/js/787.d1242b79.chunk.js",
+    "static/media/logo.jpeg": "/Joyas-Gil/static/media/logo.bbf87fd225ab2c759049.jpeg",
+    "static/media/fondo.jpg": "/Joyas-Gil/static/media/fondo.b1a488f361c1ae969895.jpg",
+    "index.html": "/Joyas-Gil/index.html",
+    "main.70f8dd27.css.map": "/Joyas-Gil/static/css/main.70f8dd27.css.map",
+    "main.89938b52.js.map": "/Joyas-Gil/static/js/main.89938b52.js.map",
+    "787.d1242b79.chunk.js.map": "/Joyas-Gil/static/js/787.d1242b79.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f9c4b51.css",
-    "static/js/main.432b38eb.js"
+    "static/css/main.70f8dd27.css",
+    "static/js/main.89938b52.js"
   ]
 }
