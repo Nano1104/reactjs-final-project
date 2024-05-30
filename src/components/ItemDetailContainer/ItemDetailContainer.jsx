@@ -1,33 +1,35 @@
 import React, { useState, useEffect, useContext} from 'react'
-import {useParams} from 'react-router-dom';
-import {Navbar} from "react-bootstrap"
+import { useParams } from 'react-router-dom';
+import { Navbar } from "react-bootstrap"
 //componentes
 import CartWidget from '../CartWidget/CartWidget';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import Loading from '../Loading/Loading'
 //context
-import {NavBarContext} from "../NavBarContext/NarBarContex"
+import { NavBarContext } from "../NavBarContext/NarBarContex"
 //variables de firebase
-import {db} from "../Firebase/Firebase"
-import {doc, getDoc} from "firebase/firestore"
+import { db } from "../Firebase/Firebase"
+import { doc, getDoc } from "firebase/firestore"
 
 
 const ItemDetailContainer = () => {
-    const {cartLength}=useContext(NavBarContext)
-    const [producto, setProducto]=useState({});
-    const [loading, setLoading]=useState(false);
+    const { cartLength } = useContext(NavBarContext)
+    const [producto, setProducto] = useState({});
+    const [loading, setLoading] = useState(false);
 
-    const {id}=useParams();
+    const { id } = useParams();
     
     useEffect(() => {
         setLoading(true);
-        
-        // armamos la referencia a un producto y su id //
-        const docRef = doc(db, "Productos", id)
-        // trabajamos con esa referencia //
-        getDoc(docRef)
+        // armamos la referencia a un producto con su id //
+        const docRef = doc(db, "Productos", id)  
+        getDoc(docRef)    // trabajamos con esa referencia //
           .then((res) => {
-            setProducto({id: res.id, ...res.data()})
+            console.log("🚀 ~ .then ~ res:", res)
+            setProducto({ id: res.id, ...res.data() })
+          })
+          .catch((err) => {
+            console.log(`Error getting doc: ${err}`)
           })
 
         .finally(() => {setLoading(false);});
@@ -35,7 +37,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-    <div className="fondoItemDetailContainer">
+    <div id="itemDetailContainer">
       {/* El state de cartLength se setea en ItemCount, y si es true se renderiza navBar con el cartWidget*/}
         {
           cartLength
@@ -52,10 +54,9 @@ const ItemDetailContainer = () => {
             :
             <>
               <hr></hr>
-                <h2 className="d-flex justify-content-center text-ItemDetail">{producto.description}</h2>  
-              <hr></hr>
-              {/* traemos el ItemDetail y le pasamos las props del prod.find */}
-              <ItemDetail id={producto}/>
+                <h2 className="flex justify-center text-ItemDetail">{producto.description}</h2>  
+              <hr className="border border-slate-950 mt-4"></hr>
+              <ItemDetail id={producto} />
             </>  
         }
       </div>

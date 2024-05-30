@@ -1,15 +1,15 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-import {MdRemoveShoppingCart} from "react-icons/md"
+import { MdRemoveShoppingCart } from "react-icons/md"
 
 const EmptyCart = () => {
   return (
     <>
-      <div className="d-flex align-items-center flex-column" id="emptyCard">
+      <div className="d-flex align-items-center flex-column" id="emptyCart">
           <h2 className="mb-3">Tu carrito se encuentra vacio</h2>
-          <MdRemoveShoppingCart style={{fontSize: "6em"}} className="mt-4"/>
-          <strong className="mt-4">¡Agrega Productos!</strong>
-          <Link to={"/productos"} className="btn btn-success m-2">Ver Prodcutos</Link>
+          <MdRemoveShoppingCart id="icon-emptyCart"/>
+          <span className="mt-4">¡Agrega Productos!</span>
+          <Link to={"/productos"} id="btn-emptyCart">Ver Prodcutos</Link>
       </div>
     </>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {BiErrorCircle} from 'react-icons/bi'
+import { BiErrorCircle } from 'react-icons/bi'
 
 const ErrorComponente = () => {
   return (

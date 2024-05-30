@@ -5,17 +5,20 @@ import {useContext} from "react"
 import {CartContext} from "../Context/CartContext"
 
 const CartWidget=()=>{
-
-    const {cartQuantity, cart}=useContext(CartContext);
+    const { cartQuantity, cart }=useContext(CartContext);
 
     return <>
             {
                 cart.length > 0 &&
                 <>
-                    <Link to="/cart">
-                        <FaShoppingCart className="carrito"/>
-                    </Link>
-                    <span className="length">{cartQuantity()}</span>
+                    <div>
+                        <Link to="/cart" className="relative">
+                            <FaShoppingCart className="carrito"/>
+                            <span className="length text-white absolute top-0 text-[15px] right-7 bg-black p-1 w-8 h-8 rounded-full flex justify-center items-center border border-slate-50">
+                                {cartQuantity()}
+                            </span>
+                        </Link>
+                    </div>
                 </>
             }
             
