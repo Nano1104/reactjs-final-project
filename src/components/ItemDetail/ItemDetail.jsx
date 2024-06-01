@@ -47,7 +47,7 @@ const ItemDetail = ({id}) => {
                                                                     marginLeft: "50px"}} />
         </div>
         <div>
-          <div className="d-flex align-items-center flex-column bg-[var(--gray)] text-[var(--blue)]" id='item-description'>
+          <div className="d-flex align-items-center flex-column bg-[var(--blue)] text-[var(--gray)] rounded-tr-lg rounded-br-lg" id='item-description'>
             <img src={logo} alt={`item-${description}-img`}
             className="my-5 cursor-pointer border-[1px] border-[var(--blue)] rounded-full w-[20%]" />
             <h4>PRECIO: {price}ARS</h4>
@@ -72,7 +72,7 @@ const ItemDetail = ({id}) => {
               stock === 0 &&
               <>
                 <strong style={{color: "red"}} className="mt-5">Lo siento este producto no tiene stock</strong>
-                <button onClick={handleNavigate} className="btn btn-primary mt-1">VOLVER</button> 
+                <button onClick={handleNavigate} className="mt-1" id="btn-prodSinStock">VOLVER</button> 
               </>
             }
             

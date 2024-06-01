@@ -4,6 +4,7 @@
 
 /* OSWALD & ROBOTO */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
   --oswald: "Oswald", sans-serif;
   --robot: "Roboto", sans-serif;
@@ -16,87 +17,84 @@
 }
 
 body {
-  background: var(--blue);
+  background: var(--gray);
 }
 
 /**************************************************************** HOME ****************************************************************/
-#icon {
-  background-image: url("./images/logo.jpeg");
+
+.bg-home {
+  background-image: url("./images/fondo.avif");
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-  position: relative;
+  background-position: center center;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px;
-
-  animation: rotate 2s linear infinite;
-}
-#icon span {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 50%;
-  width: 6.5rem;
-  height: 6.5rem;
-  font-size: 1.5rem;
-  font-family: var(--oswald);
-  padding: 15px;
-
-  animation: counter-rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes counter-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-180deg);
-  }
+  flex-direction: column;
 }
 
 #home-title {  
   font-family: var(--parisienne);
-  color: white;
-  font-size: 6rem;
-  text-shadow: 0px 0px 5px black;
+  color: var(--blue);
+  font-size: 8rem;
+  font-weight: 600;
+  text-shadow: 0px 0px 10px white;
+
+  animation: fadeIn;
+  animation-duration: 2.5s;
+}
+
+#btn-home {
+  text-decoration: none;
+  font-family: var(--robot);
+  color: #333;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 15rem;
+
+  padding: 10px 20px; /* Añadir relleno para hacer el botón más grande */
+  border-bottom: 2px solid #555; /* Añadir un borde */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#btn-home:hover {
+  border-color: transparent;
+  background-color: var(--gray); /* Fondo oscuro al pasar el ratón */
+  color: black; /* Texto blanco al pasar el ratón */
+  box-shadow: 0px 0px 1.2px #333;
 }
 
 .carrito{
   font-size: 2em;
   margin-right: 50px;
-  color: #ddd;
+  color: #333;
 }
+
+
+
+/**************************************************************** ITEM LIST CONTAINER ****************************************************************/
 
 #itemListNav {
   list-style: none;
-  font-family: var(--oswald);
+  font-family: var(--parisienne);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #333;
+  transition: .2s all;
+}
+.nav-link:hover {
+  color: #444;
 }
 
 /**************************************************************** ITEM DETAIL ****************************************************************/
 
 #itemDetail {
   font-family: var(--robot);
-  /* position: relative;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto; */
 }
 
 .text-ItemDetail{
@@ -188,26 +186,26 @@ body {
 }
 
 #btn-finalizarCompra {
-  background-color: var(--blue);
+  background-color: var(--gray);
   padding: 8px;
   border-radius: 8px;
-  color: white;
+  color: black;
   transition: .2s all;
 }
 #btn-finalizarCompra:hover {
-  background-color: rgb(35,55,106);
+  background-color: #a3a3a3;
 }
 
 /* ---------------------- MAIN STYLES ---------------------- */
 /* LOADING COMPONENT */
-.center{
+.center {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
-.circle{
+.circle {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -248,7 +246,8 @@ body {
 .item-container {
   width: 300px;
   height: 400px;
-  background-color: var(--gray);
+  color: white;
+  background-color: #333;
 }
 
 .img-item {
@@ -257,26 +256,26 @@ body {
 }
 
 .item-container h4 {
-  font-family: var(--robot);
-  color: var(--blue);
+  margin-top: 8px;
+  font-family: var(--oswald);
 }
 
-.cajaList{
+.item-container button {
+  color: white;
+  transition: .2s all;
+}
+.item-container button:hover {
+  background-color: #C0D9E1;
+  color: black;
+}
+
+.cajaList {
   display: flex;
   justify-content: space-around;
   width: 80%;
   gap: 20px;
   flex-wrap: wrap;
-  /* outline: 1px solid white; */
 }
-
-
-
-
-
-
-
-
 
 
 #navLog{
@@ -287,22 +286,38 @@ body {
 
 
 /**************************************************************** ITEM DETAIL ****************************************************************/
-#itemImage{
+#itemImage {
   width: 350px;
   height: 300px;
   background-color: white;
   border: 1px solid var(--blue);
 }
-#item-description{
+#item-description {
   width: 375px;
   height: 500px;
   border-left: 3px solid black;
 }
 
+#btn-prodSinStock {
+  background-color: rgb(238, 225, 105);
+  border-radius: 5px;
+  color: black;
+  font-size: 1rem;
+  padding: 8px;
+  margin-left: 4px;
+  transition: .2s all;
+}
+#btn-prodSinStock:hover {
+  background-color: rgb(209, 200, 106);
+}
+
 /**************************************************************** ITEM COUNT ****************************************************************/
 #cantidadModifier {
- /*  outline: 1px solid black; */
   width: 85%;
+}
+
+#cantidadModifier input {
+  color: #333;
 }
 
 #cantidadModifier button{
@@ -320,77 +335,74 @@ body {
   color: white;
 }
 #btn-less {
-
-}
-.btn-less:hover{
-    background-color: rgba(255,0,0, 0.5);
-}
-.btn-plus:hover{
-    background-color: rgba(0,0,255, 0.5);
-}
-.btnFinalizarCompra:hover{
-    transition: .2s all;
-    box-shadow: 0px 0px 5px black;
-    font-size: 1.05em;
+  border: none;
+  background-color: var(--gray);
+  color: black;
 }
 
 #btn-addProd {
-  background-color: var(--blue);
+  background-color: var(--gray);
   border-radius: 5px;
-  color: white;
+  color: #333;
   font-size: 1rem;
   padding: 8px;
   transition: .2s all;
 }
 #btn-addProd:hover {
-  background-color: rgb(35,55,106);
+  background-color: #a3a3a3;
 }
 
 #btn-backToItems {
-  background-color: #333;
+  background-color: rgb(238, 225, 105);
   border-radius: 5px;
-  color: white;
+  color: black;
   font-size: 1rem;
   padding: 8px;
   margin-left: 4px;
   transition: .2s all;
 }
 #btn-backToItems:hover {
-  background-color: #494949;
-}
-
-#title-sendOrder {
-
+  background-color: rgb(209, 200, 106);
 }
 
 
 /**************************************************************** FORM ****************************************************************/
 #form {
   font-family: var(--robot);
+  position: relative;
+  margin: 150px auto;
+  width: 32%;
+  /* outline: 1px solid black; */
+  border-radius: 20px;
+  padding-bottom: 90px;
+  box-shadow: 0px 0px 7px black;
+  background-color: #c2bebe;
 }
+
 #title-sendOrder {
   font-family: var(--oswald);
   margin-top: 100px;
-  color: var(--gray);
+  color: rgb(32, 53, 102);
   font-size: 2.5rem;
-  text-shadow: 0px 0px 3px black;
+  text-shadow: 0px 0px 1.5px black;
 }
 
 #form input{
-  color: white;
+  color: #333;
   text-align: center;
-  width: 30%;
+  width: 50%;
   background: none;
   border: none;
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 2px solid #333;
 }
 #form input::placeholder{
-  color: var(--strongGray);
+  color: #333;
 }
 
 #btn-send {
   border: none;
-  background-color: var(--gray);
+  color: white;
+  background-color: #333;
   transition: .2s all;
 }
 #btn-send:hover {
@@ -439,17 +451,19 @@ body {
 }
 
 #btnVaciarCarro {
-  background-color: #333;
+  background-color: #464545;
 }
 #btnVaciarCarro:hover{
-  background-color: #494949;
+  background-color: #666666;
 }
 
 #btn-terminarCompra {
-  background-color:  #008f39;
+  color: black;
+  font-weight: 400;
+  background-color: rgb(255, 236, 67);
 }
 #btn-terminarCompra:hover{
-  background-color: #5a5;
+  background-color: rgb(233, 220, 104);
 }
 
 /**************************************************************** EMPTY CART ****************************************************************/
@@ -458,14 +472,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #333;
   box-sizing: content-box;
   padding: 100px;
   width: 300px;
   height: 300px;
   margin: 150px auto;
   font-family: var(--robot);
-  border: 10px double white;
+  border: 10px double #333;
   border-radius: 50%;
 }
 
@@ -503,7 +517,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: center;
-  color: var(--gray);
+  color: #333;
   font-family: var(--robot);
 }
 
@@ -513,12 +527,44 @@ body {
 
 #btn-finishPurchase {
   border: none;
-  background-color: var(--gray);
+  background-color: var(--blue);
   transition: .2s all;
   margin-top: 35px;
+  color: white;
 }
 #btn-finishPurchase:hover {
-  background-color: #657b83;
+  background-color: rgb(50, 72, 128);
 }
 
+/**************************************************************** ERROR RENDERING PRODUCTS ****************************************************************/
+#error-rendering-container {
+  font-family: var(--robot);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 200px auto;
+}
 
+.btn-errorRendering {
+  font-size: 5rem;
+  color: #333;
+}
+
+#error-rendering-container span {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#error-rendering-container button {
+  transition: .2s all;
+  background-color: #464545;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  margin-top: 10px;
+}
+#error-rendering-container button:hover {
+  background-color: #666666;
+}

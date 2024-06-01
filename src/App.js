@@ -5,7 +5,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* importamos los componentes */
-import NavBar from './components/NavBar/NavBar';
 import Home from "./components/Home/Home.jsx";
 import ErrorRoute from './components/ErrorRoute/ErrorRoute'
 import ItemListContainer from './components/ItemListContianer/ItemListContainer';

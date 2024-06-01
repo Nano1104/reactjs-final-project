@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { CartContext } from "../Context/CartContext"
 import { Link } from "react-router-dom"
 import EmptyCart from "../EmptyCart/EmptyCart"
@@ -31,7 +31,7 @@ const Cart = () => {
 
         <hr className="border border-white"></hr>
         <div className="d-flex align-items-center flex-column">
-            <h3 className="text-white" id="total-price">Precio total de compra: {precioTotal()}ARS</h3>
+            <h3 className="text-[#333]" id="total-price">Precio total de compra: {precioTotal()}ARS</h3>
             <div className="d-flex">
               <Link to="/checkout" id="btn-terminarCompra">TERMINAR COMPRA</Link>
               <button id="btnVaciarCarro" onClick={emptyCart}>VACIAR CARRO</button>

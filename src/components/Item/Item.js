@@ -1,6 +1,4 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {Card, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 const loadImage = (imageName) => {      //funcion para importar cierta imagen y usar su url
     try {
@@ -17,15 +15,14 @@ export default function Item({props}){
 
     return (
         <>
-            <div className="
-                bg-slate-500 item-container
+            <div className="item-container
                 text-center flex flex-col justify-center
                 rounded-lg shadow-lg mt-3">
-                <img src={imageUrl} className='img-item p-4 bg-white rounded-tl-lg rounded-tr-lg' />
+                <img src={imageUrl} className='img-item p-4 bg-white rounded-tl-lg rounded-tr-lg' alt={imageUrl} />
                 <div className=''>
                     <h4 className='text-lg'>{description}</h4>
                     <Link to={`/item/${id}`}>
-                        <button className='bg-[rgb(25,40,76)] py-2 px-4 m-2 rounded-lg text-white hover:bg-[rgb(35,55,106)]'>Ver</button>
+                        <button className='bg-slate-600 py-2 px-4 m-2 rounded-lg'>Ver</button>
                     </Link>
                 </div>
             </div>
