@@ -1,7 +1,13 @@
-# Joyas Artemis 
-#### Sitio donde puedes encontrar distintas piezas de biyuterie de buena calidad como de Oro o de Acero Quirúrgico y a buen precio. Puedes encontrar: 
+<div align="center">
+  <h1>Music Int.</h1>
+</div>
 
-- Anillos
-- Aros
-- Collares y Dijes
-- Pulseras 
+<div align="center">
+  <h4>🎵🎵Ecommerce de productos musicales desarrollado con React js</h4>
+</div>
+
+*Herramientas:*
+*React, JavaScript, tailwind, bootstrap, Firebase y Render*
+
+Deploy con Render:
+➡️ [Ver sitio](https://musicint-reactjs.onrender.com/)
